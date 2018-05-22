@@ -3,21 +3,27 @@
 var imagesInFolder = [];
 
 function loadImages () {
-	// create array 
-	//let imagesInFolder = [];
-	// load images into array
-	
-	// load images from images folder
-	const folder = "./images";
-	const fs = require('fs');
 
-	fs.readdirSync(folder).forEach(file => {
-		imagesInFolder += file;
-		return imagesInFolder;
-		//console.log(file);
-	})
+	var folder = "./images/";
+	imagesInFolder = [];
+
+	$.ajax({
+		url : folder,
+		success: function (data) {
+			$(data).find("a").attr("href", function (i, val) {
+				if( val.match(/\.(jpe?g|png|gif)$/) ) { 
+					imagesInFolder.append(val);
+					// $("body").append( "<img src='"+ folder + val +"'>" );
+				} 
+			});
+		}
+	});
 	
+	// load images into dom
+	
+	createImages();
 }
+
 
 
 function openModal() {
