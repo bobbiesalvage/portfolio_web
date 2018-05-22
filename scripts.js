@@ -4,7 +4,7 @@ var imagesInFolder = [];
 
 function loadImages () {
 
-	var folder = "./images";
+	var folder = "/images";
 	imagesInFolder = [];
 
 	$.ajax({
