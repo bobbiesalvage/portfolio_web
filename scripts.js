@@ -4,7 +4,7 @@ var imagesInFolder = [];
 
 function loadImages () {
 
-	var folder = "/images";
+	var folder = "https://bobbiesalvage.github.io/portfolio_web/images";
 	imagesInFolder = [];
 
 	$.ajax({
