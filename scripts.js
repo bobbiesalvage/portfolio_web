@@ -3,7 +3,7 @@
 var imagesInFolder = [];
 
 function loadImages () {
-	var folder = "images/";
+	var folder = "./images/";
 
 	$.ajax({
 		url : folder,
@@ -15,7 +15,7 @@ function loadImages () {
 				} 
 			});
 			
-			createImages();
+			//createImages();
 		}
 	});
 }
