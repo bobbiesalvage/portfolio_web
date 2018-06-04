@@ -11,18 +11,7 @@ function loadImages () {
 			$(data).find("a").attr("href", function (i, val) {
 				if( val.match(/\.(jpe?g|png|gif)$/) ) { 
 					//imagesInFolder.append(val);
-					
-					var createDiv = document.createElement("div");
-					var x = document.createElement("IMG");
-					x.setAttribute("src", "folder + val");
-					x.setAttribute("width", "304");
-					x.setAttribute("height", "228");
-					x.setAttribute("alt", "Image 1");
-					x.setAttribute("onclick", "openModal(); currentSlide(val)");
-					x.setAttribute("class", "hover-shadow cursor");
-					createDiv.appendChild(x);
-					document.body.appendChild(createDiv);
-					/* $("body").append( "<img src='"+ folder + val +"'>" ); */
+					$("body").append( "<img src='"+ folder + val +"'>" );
 				} 
 			});
 			
