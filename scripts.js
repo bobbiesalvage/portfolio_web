@@ -1,51 +1,8 @@
 // get all images from images folder //
 
-var imagesInFolder = [];
-
-function loadImages () {
-	//var folder = "https://github.com/bobbiesalvage/portfolio_web/tree/master/images";
-
-	$.ajax({
-		url : "https://github.com/bobbiesalvage/portfolio_web/tree/master/images",
-		success: function (data) {
-			$(data).find("a").attr("href", function (i, val) {
-				if( val.match(/\.(jpe?g|png|gif)$/) ) { 
-					//imagesInFolder.append(val);
-					$("body").append( "<img src='"+ folder + val +"'>" );
-				} 
-			});
-			
-			//createImages();
-		}
-	});
-}
-
-
-
 function openModal() {
   document.getElementById('myModal').style.display = "block";
 }
-
-// add images for length of array
-//<div class="column">
-  //  <img src="images/img_nature.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
-  //</div>
-
-/*function createImages () {
-	for (var value of imagesInFolder){
-		var createDiv = document.createElement("div");
-		var x = document.createElement("IMG");
-		x.setAttribute("src", "imagesInFolder[value]");
-		x.setAttribute("width", "304");
-		x.setAttribute("height", "228");
-		x.setAttribute("alt", "Image 1");
-		x.setAttribute("onclick", "openModal();currentSlide(value)");
-		x.setAttribute("class", "hover-shadow cursor");
-		createDiv.appendChild(x);
-		document.body.appendChild(createDiv);
-	}
-}  */
-  
   
 function closeModal() {
   document.getElementById('myModal').style.display = "none";
