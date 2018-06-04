@@ -3,10 +3,10 @@
 var imagesInFolder = [];
 
 function loadImages () {
-	var folder = "https://github.com/bobbiesalvage/portfolio_web/tree/master/images";
+	//var folder = "https://github.com/bobbiesalvage/portfolio_web/tree/master/images";
 
 	$.ajax({
-		url : folder,
+		url : "https://github.com/bobbiesalvage/portfolio_web/tree/master/images",
 		success: function (data) {
 			$(data).find("a").attr("href", function (i, val) {
 				if( val.match(/\.(jpe?g|png|gif)$/) ) { 
