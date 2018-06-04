@@ -3,9 +3,7 @@
 var imagesInFolder = [];
 
 function loadImages () {
-
-	var folder = "https://bobbiesalvage.github.io/portfolio_web/images";
-	imagesInFolder = [];
+	var folder = "images/";
 
 	$.ajax({
 		url : folder,
@@ -13,15 +11,13 @@ function loadImages () {
 			$(data).find("a").attr("href", function (i, val) {
 				if( val.match(/\.(jpe?g|png|gif)$/) ) { 
 					imagesInFolder.append(val);
-					// $("body").append( "<img src='"+ folder + val +"'>" );
+					/* $("body").append( "<img src='"+ folder + val +"'>" ); */
 				} 
 			});
+			
+			createImages();
 		}
 	});
-	
-	// load images into dom
-	
-	createImages();
 }
 
 
